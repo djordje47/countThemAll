@@ -5,7 +5,7 @@ export default function CounterListComponent(props) {
     return (
         <div>
             <ul>
-                {props.counters.map((counter) => <li>{counter.counterName}</li>)}
+                {props.counters.map((counter) => <li>{counter.counterName} - {counter.counterValue}</li>)}
             </ul>
         </div>
     );
