@@ -32,12 +32,21 @@ class App extends React.Component {
     event.preventDefault();
   }
 
+  handleDelete(counterId) {
+    const filteredCounters = this.state.counters.filter(
+        counter => counter.counterId !== counterId,
+    );
+    this.setState({counters: filteredCounters});
+  }
+
   render() {
     return (
         <div className="App">
           <header className="App-header">Counter app</header>
           <FormComponent onFormSubmit={(event) => this.handleSubmit(event)}/>
-          <CounterListComponent counters={this.state.counters}/>
+          <CounterListComponent counters={this.state.counters}
+                                handleDelete={(counterId) => this.handleDelete(
+                                    counterId)}/>
         </div>
     );
   }
