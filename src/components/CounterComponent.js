@@ -4,13 +4,19 @@ export default function CounterComponent(props) {
   return (
       <li>
         {props.counter.counterName} - {props.counter.counterValue}
-        <button id="editCounter">Edit Counter</button>
-        <button id="deleteCounter"
-                onClick={(e) => props.handleDelete(e)}>
+        <button className="editCounter">Edit Counter</button>
+        <button className="deleteCounter"
+                onClick={() => props.handleDelete(props.counter.counterId)}>
           Delete Counter
         </button>
-        <button>IncreaseCounter</button>
-        <button>DecreaseCounter</button>
+        <button className="IncreaseCounter"
+                onClick={() => props.handleCounterIncrease(
+                    props.counter.counterId)}>IncreaseCounter
+        </button>
+        <button className="DecreaseCounter"
+                onClick={() => props.handleCounterDecrease(
+                    props.counter.counterId)}>DecreaseCounter
+        </button>
       </li>
   );
 }

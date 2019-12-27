@@ -22,7 +22,7 @@ class App extends React.Component {
     const newCounter = {
       counterId,
       counterName: counterName.value,
-      counterValue: counterValue.value,
+      counterValue: parseInt(counterValue.value),
     };
     this.setState(
         {counters: counters.concat(newCounter)},
@@ -39,6 +39,42 @@ class App extends React.Component {
     this.setState({counters: filteredCounters});
   }
 
+  handleCounterDecrease(counterId) {
+    const counterDecreased = this.state.counters.map(counter => {
+      return counter.counterId === counterId
+          ? {
+            counterId: counter.counterId,
+            counterName: counter.counterName,
+            counterValue: counter.counterValue - 1,
+          }
+          : {
+            counterId: counter.counterId,
+            counterName: counter.counterName,
+            counterValue: counter.counterValue,
+          };
+    });
+    this.setState({counters: counterDecreased});
+  }
+
+  handleCounterIncrease(counterId) {
+    const counterIncreased = this.state.counters.map(counter => {
+      return counter.counterId === counterId
+          ? {
+            counterId: counter.counterId,
+            counterName: counter.counterName,
+            counterValue: counter.counterValue + 1,
+          }
+          : {
+            counterId: counter.counterId,
+            counterName: counter.counterName,
+            counterValue: counter.counterValue,
+          };
+    });
+    this.setState({counters: counterIncreased});
+  }
+
+  handleCounterUpdate(counterId) {console.log('Update-method', counterId);}
+
   render() {
     return (
         <div className="App">
@@ -46,7 +82,12 @@ class App extends React.Component {
           <FormComponent onFormSubmit={(event) => this.handleSubmit(event)}/>
           <CounterListComponent counters={this.state.counters}
                                 handleDelete={(counterId) => this.handleDelete(
-                                    counterId)}/>
+                                    counterId)}
+                                handleCounterIncrease={(counterId) => this.handleCounterIncrease(
+                                    counterId)}
+                                handleCounterDecrease={(counterId) => this.handleCounterDecrease(
+                                    counterId)}
+          />
         </div>
     );
   }

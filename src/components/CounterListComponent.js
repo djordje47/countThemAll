@@ -9,8 +9,12 @@ export default class CounterListComponent extends React.Component {
             {this.props.counters.map(
                 (counter) => <CounterComponent key={counter.counterId}
                                                counter={counter}
-                                               handleDelete={(e) => this.props.handleDelete(
-                                                   counter.counterId)}/>)}
+                                               handleDelete={() => this.props.handleDelete(
+                                                   counter.counterId)}
+                                               handleCounterIncrease={(counterId) => this.props.handleCounterIncrease(
+                                                   counterId)}
+                                               handleCounterDecrease={(counterId) => this.props.handleCounterDecrease(
+                                                   counterId)}/>)}
           </ul>
         </div>
     );
