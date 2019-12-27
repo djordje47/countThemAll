@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 export default function CounterListComponent(props) {
-    console.log(props.counters);
-    return (
-        <div>
-            <ul>
-                {props.counters.map((counter) => <li>{counter.counterName} - {counter.counterValue}</li>)}
-            </ul>
-        </div>
-    );
+  return (
+      <div>
+        <ul>
+          {props.counters.map((counter) => <li
+              key={counter.counterId}>{counter.counterName} - {counter.counterValue}</li>)}
+        </ul>
+      </div>
+  );
 }
