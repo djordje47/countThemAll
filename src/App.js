@@ -11,6 +11,7 @@ class App extends React.Component {
       counters: [],
     };
     /**
+     * https://mzl.la/2SzTQtA - MDN link to bind
      * Bind methods and only in the lowest level of component tree
      * send the params you need. But wrap it in arrow function, or it will
      * trigger the method every time component re-renders!
@@ -54,13 +55,9 @@ class App extends React.Component {
           ? {
             counterId: counter.counterId,
             counterName: counter.counterName,
-            counterValue: counter.counterValue - 1,
+            counterValue: --counter.counterValue,
           }
-          : {
-            counterId: counter.counterId,
-            counterName: counter.counterName,
-            counterValue: counter.counterValue,
-          };
+          : counter;
     });
     this.setState({counters: counterDecreased});
   }
@@ -71,13 +68,9 @@ class App extends React.Component {
           ? {
             counterId: counter.counterId,
             counterName: counter.counterName,
-            counterValue: counter.counterValue + 1,
+            counterValue: ++counter.counterValue,
           }
-          : {
-            counterId: counter.counterId,
-            counterName: counter.counterName,
-            counterValue: counter.counterValue,
-          };
+          : counter;
     });
     this.setState({counters: counterIncreased});
   }
