@@ -31,8 +31,11 @@ class App extends React.Component {
 
     const newCounter = {
       counterId,
-      counterName: counterName.value,
-      counterValue: parseInt(counterValue.value),
+      counterName: counterName.value === ''
+          ? 'No name counter'
+          : counterName.value,
+      counterValue: parseInt(
+          counterValue.value === '' ? 0 : counterValue.value),
     };
     this.setState(
         {counters: counters.concat(newCounter)},
