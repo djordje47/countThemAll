@@ -3,7 +3,7 @@ import React from 'react';
 export default function FormComponent(props) {
   return (
       <div>
-        <form onSubmit={(event) => props.onFormSubmit(event)}>
+        <form onSubmit={props.onFormSubmit}>
           <input
               id="counterName"
               placeholder="Counter name"

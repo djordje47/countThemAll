@@ -10,7 +10,16 @@ class App extends React.Component {
     this.state = {
       counters: [],
     };
+    /**
+     * Bind methods and only in the lowest level of component tree
+     * send the params you need. But wrap it in arrow function, or it will
+     * trigger the method every time component re-renders!
+     */
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleCounterDecrease = this.handleCounterDecrease.bind(this);
+    this.handleCounterIncrease = this.handleCounterIncrease.bind(this);
+    this.handleCounterUpdate = this.handleCounterUpdate.bind(this);
   }
 
   handleSubmit(event) {
@@ -79,14 +88,11 @@ class App extends React.Component {
     return (
         <div className="App">
           <header className="App-header">Counter app</header>
-          <FormComponent onFormSubmit={(event) => this.handleSubmit(event)}/>
+          <FormComponent onFormSubmit={this.handleSubmit}/>
           <CounterListComponent counters={this.state.counters}
-                                handleDelete={(counterId) => this.handleDelete(
-                                    counterId)}
-                                handleCounterIncrease={(counterId) => this.handleCounterIncrease(
-                                    counterId)}
-                                handleCounterDecrease={(counterId) => this.handleCounterDecrease(
-                                    counterId)}
+                                handleDelete={this.handleDelete}
+                                handleCounterIncrease={this.handleCounterIncrease}
+                                handleCounterDecrease={this.handleCounterDecrease}
           />
         </div>
     );

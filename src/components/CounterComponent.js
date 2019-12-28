@@ -11,11 +11,13 @@ export default function CounterComponent(props) {
         </button>
         <button className="IncreaseCounter"
                 onClick={() => props.handleCounterIncrease(
-                    props.counter.counterId)}>IncreaseCounter
+                    props.counter.counterId)}>
+          IncreaseCounter
         </button>
         <button className="DecreaseCounter"
                 onClick={() => props.handleCounterDecrease(
-                    props.counter.counterId)}>DecreaseCounter
+                    props.counter.counterId)}>
+          DecreaseCounter
         </button>
       </li>
   );
