@@ -4,18 +4,27 @@ import CounterComponent from './CounterComponent';
 export default class CounterListComponent extends React.Component {
     render() {
         return (
-            <div>
-                <ul>
-                    {this.props.counters.map(
-                        (counter) => <CounterComponent
-                            key={counter.counterId}
-                            counter={counter}
-                            handleDelete={this.props.handleDelete}
-                            handleCounterIncrease={this.props.handleCounterIncrease}
-                            handleCounterDecrease={this.props.handleCounterDecrease}
-                            handleCounterUpdate={this.props.handleCounterUpdate}/>)}
-                </ul>
-            </div>
+                <table className="u-full-width">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Counter Name:</th>
+                        <th>CounterValue</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.counters.map(
+                            (counter, index) => <CounterComponent
+                                key={counter.counterId}
+                                index={index}
+                                counter={counter}
+                                handleDelete={this.props.handleDelete}
+                                handleCounterIncrease={this.props.handleCounterIncrease}
+                                handleCounterDecrease={this.props.handleCounterDecrease}
+                                handleCounterUpdate={this.props.handleCounterUpdate}/>)}
+                    </tbody>
+                </table>
         );
     }
 }

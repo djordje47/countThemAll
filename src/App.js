@@ -119,18 +119,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">Counter app</header>
-                <FormComponent onFormSubmit={this.handleSubmit}
-                               onFormUpdate={this.handleUpdate}
-                               counterToUpdate={this.state.counterToUpdate}/>
-                <CounterListComponent counters={this.state.counters}
-                                      handleDelete={this.handleDelete}
-                                      handleCounterIncrease={this.handleCounterIncrease}
-                                      handleCounterDecrease={this.handleCounterDecrease}
-                                      handleCounterUpdate={this.handleCounterUpdate}
-                />
-            </div>
+            // <div className="application-container">
+                <div className="row">
+                    <div className="two columns">
+                        <FormComponent onFormSubmit={this.handleSubmit}
+                                       onFormUpdate={this.handleUpdate}
+                                       counterToUpdate={this.state.counterToUpdate}/>
+                    </div>
+                    <div className="ten columns">
+                        <CounterListComponent counters={this.state.counters}
+                                              handleDelete={this.handleDelete}
+                                              handleCounterIncrease={this.handleCounterIncrease}
+                                              handleCounterDecrease={this.handleCounterDecrease}
+                                              handleCounterUpdate={this.handleCounterUpdate}
+                        />
+                    </div>
+                </div>
+            // </div>
         );
     }
 }
