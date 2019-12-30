@@ -61,7 +61,7 @@ class App extends React.Component {
                 : counter;
         });
 
-        this.setState({counters: counterUpdated});
+        this.setState({counterToUpdate: false, counters: counterUpdated});
         event.preventDefault();
     }
 

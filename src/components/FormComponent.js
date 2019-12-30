@@ -6,7 +6,9 @@ class FormComponent extends React.Component {
             return (
                 <div>
                     <form onSubmit={this.props.onFormUpdate}>
-                        <input type="hidden" defaultValue={this.props.counterToUpdate.counterId} name="counterId"/>
+                        <input type="hidden"
+                               key={`counterIdToUpdate:${this.props.counterToUpdate.counterId}`}
+                               defaultValue={this.props.counterToUpdate.counterId} name="counterId"/>
                         <input
                             id="counterName"
                             name="counterName"
