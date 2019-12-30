@@ -1,6 +1,6 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCoffee, faEdit, faMinusSquare, faPlusSquare, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+import {faEdit, faMinusSquare, faPlusSquare, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 
 
 export default function CounterComponent(props) {
@@ -14,23 +14,31 @@ export default function CounterComponent(props) {
                 {props.counter.counterValue}
             </td>
             <td>
-                <button className="editCounter"
-                        onClick={() => props.handleCounterUpdate(props.counter.counterId)}><FontAwesomeIcon
-                    icon={faEdit}/>
+                <button className={"m-3 action-holder edit"}
+                        onClick={() => props.handleCounterUpdate(props.counter.counterId)}>
+                    <FontAwesomeIcon
+                        size={"3x"}
+                        icon={faEdit}/>
                 </button>
-                <button className="deleteCounter"
+                <button className={"m-3 action-holder delete"}
                         onClick={() => props.handleDelete(props.counter.counterId)}>
-                    <FontAwesomeIcon icon={faTrashAlt}/>
+                    <FontAwesomeIcon
+                        icon={faTrashAlt}
+                        size={"3x"}/>
                 </button>
-                <button className="IncreaseCounter"
-                        onClick={() => props.handleCounterIncrease(
-                            props.counter.counterId)}>
-                    <FontAwesomeIcon icon={faPlusSquare}/>
+                <button className={"m-3 action-holder increase text-center"}
+                        onClick={() => props.handleCounterIncrease(props.counter.counterId)}>
+                    <FontAwesomeIcon
+                        icon={faPlusSquare}
+                        size={"3x"}
+                    />
                 </button>
-                <button className="DecreaseCounter"
-                        onClick={() => props.handleCounterDecrease(
-                            props.counter.counterId)}>
-                    <FontAwesomeIcon icon={faMinusSquare}/>
+                <button className={"m-3 action-holder decrease"}
+                        onClick={() => props.handleCounterDecrease(props.counter.counterId)}>
+                    <FontAwesomeIcon
+                        icon={faMinusSquare}
+                        size={"3x"}
+                    />
                 </button>
             </td>
         </tr>

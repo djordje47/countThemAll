@@ -8,9 +8,47 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    /*align-content: center;*/
-    /*align-items: center;*/
     width: 100%;
+}
+
+.action-holder {
+    transition: color ease-in-out 0.6s;
+    cursor: pointer;
+    padding: 3px 13px;
+    border: none;
+    margin: 3rem;
+}
+
+.edit {
+    color: #f1c40f;
+}
+
+.edit:hover {
+    color: #d35400;
+}
+
+.delete {
+    color: #e74c3c;
+}
+
+.delete:hover {
+    color: #c0392b;
+}
+
+.increase {
+    color: #2ecc71;
+}
+
+.increase:hover {
+    color: #16a085;
+}
+
+.decrease {
+    color: #95a5a6;
+}
+
+.decrease:hover {
+    color: #2c3e50;
 }
 
 .text-center {
@@ -35,20 +73,8 @@
     display: block;
 }
 
-/*.table-container {*/
-/*    width: 90%;*/
-/*    margin: 0 auto;*/
-/*    overflow: auto;*/
-/*}*/
-
-/*.app-form-row {*/
-/*    display: flex;*/
-/*    flex-flow: row wrap;*/
-/*    justify-content: center;*/
-/*    align-content: center;*/
-/*}*/
-
 button.update-button {
+    transition: background-color ease-in-out 0.6s;
     background-color: #f1c40f;
     border-color: #f1c40f;
 }
