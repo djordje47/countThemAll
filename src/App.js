@@ -119,14 +119,14 @@ class App extends React.Component {
 
     render() {
         return (
-            // <div className="application-container">
+            <div className="container u-full-width">
                 <div className="row">
-                    <div className="two columns">
+                    <div className="two columns form-column">
                         <FormComponent onFormSubmit={this.handleSubmit}
                                        onFormUpdate={this.handleUpdate}
                                        counterToUpdate={this.state.counterToUpdate}/>
                     </div>
-                    <div className="ten columns">
+                    <div className="ten columns table-column">
                         <CounterListComponent counters={this.state.counters}
                                               handleDelete={this.handleDelete}
                                               handleCounterIncrease={this.handleCounterIncrease}
@@ -135,7 +135,7 @@ class App extends React.Component {
                         />
                     </div>
                 </div>
-            // </div>
+            </div>
         );
     }
 }

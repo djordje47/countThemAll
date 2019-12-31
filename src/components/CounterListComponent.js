@@ -8,9 +8,9 @@ export default class CounterListComponent extends React.Component {
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Counter Name:</th>
-                        <th>CounterValue</th>
-                        <th>Action</th>
+                        <th>Name:</th>
+                        <th>Value:</th>
+                        <th>Action:</th>
                     </tr>
                     </thead>
                     <tbody>
